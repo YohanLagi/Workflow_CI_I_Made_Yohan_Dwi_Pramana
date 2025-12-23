@@ -39,9 +39,8 @@ jobs:
 
     - name: Validate MLflow Project
       run: |
-        cd MLProject
         ls -l
-        cat MLProject
+        cat MLproject
 
     - name: Run MLflow Project
       env:
