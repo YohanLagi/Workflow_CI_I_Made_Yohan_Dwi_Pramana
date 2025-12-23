@@ -46,6 +46,7 @@ jobs:
       env:
         MLFLOW_TRACKING_URI: https://dagshub.com/${{ secrets.DAGSHUB_USERNAME }}/Model_tracking_asah.mlflow
       run: |
+        cd MLProject
         mlflow run . --env-manager=local
 
     - name: Upload Artifacts
