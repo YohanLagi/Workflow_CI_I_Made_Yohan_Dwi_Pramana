@@ -68,7 +68,6 @@ jobs:
 
     - name: Build Docker Image from MLflow Model
       run: |
-        cd MLProject
         mlflow models build-docker \
           -m model_output_lokal \
           -n ${{ secrets.DOCKER_USERNAME }}/submission-mlops:latest
