@@ -4,4 +4,5 @@ conda_env: conda.yaml
 
 entry_points:
   main:
-    command: "python modelling.py"
+    command: "python modelling_tunning.py"
+
