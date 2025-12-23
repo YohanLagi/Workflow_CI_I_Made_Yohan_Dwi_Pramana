@@ -57,7 +57,6 @@ jobs:
 
     - name: Debug Model Output
       run: |
-        cd MLProject
         ls -R
 
     - name: Login to Docker Hub
