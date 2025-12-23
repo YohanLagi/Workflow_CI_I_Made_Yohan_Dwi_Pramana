@@ -68,3 +68,8 @@ y_pred = pipeline.predict(X_test)
 acc = accuracy_score(y_test, y_pred)
 
 print(f"Accuracy: {acc:.4f}")
+
+mlflow.sklearn.log_model(
+    sk_model=pipeline,
+    artifact_path="model"
+)
