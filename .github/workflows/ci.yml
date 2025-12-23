@@ -20,9 +20,7 @@ jobs:
         run: pip install mlflow pandas scikit-learn xgboost
 
       - name: Run MLflow Project
-        run: |
-          cd MLProject
-          mlflow run .
+        run:  mlflow run MLProject
 
       - name: Upload Model Artifact
         uses: actions/upload-artifact@v4
