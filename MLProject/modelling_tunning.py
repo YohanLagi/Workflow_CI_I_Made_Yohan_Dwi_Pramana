@@ -36,10 +36,16 @@ mlflow.set_experiment("Sentiment Analysis - XGBoost Hyperparameter Search")
 
 # LOAD DATASET
 print("Memuat dataset...")
-try:
-    dataset = pd.read_csv("preprocessing/preprocessed_kredivo.csv")
-except FileNotFoundError:
-    dataset = pd.read_csv("preprocessed_kredivo.csv")
+
+DATA_PATH = "namadataset_preprocessing/preprocessed_kredivo.csv"
+
+if not os.path.exists(DATA_PATH):
+    raise FileNotFoundError(
+        f"Dataset tidak ditemukan di {DATA_PATH}. "
+        "Pastikan file sudah di-commit ke repository."
+    )
+
+dataset = pd.read_csv(DATA_PATH)
 
 
 # LABEL SENTIMEN
@@ -184,3 +190,4 @@ with mlflow.start_run(run_name="Final_XGBoost_Model"):
     mlflow.log_artifact("model_structure.html")
 
 print("Training dan logging selesai. Silakan cek dashboard DagsHub.")
+
